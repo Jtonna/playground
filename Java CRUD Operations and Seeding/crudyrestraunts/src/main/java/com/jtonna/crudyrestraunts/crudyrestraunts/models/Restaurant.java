@@ -1,6 +1,8 @@
 package com.jtonna.crudyrestraunts.crudyrestraunts.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "restaurants")
@@ -9,6 +11,7 @@ public class Restaurant
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long restaurantid;
+
     @Column(unique = true, nullable = false)
     private String name;
     @Column(unique = true, nullable = false)
@@ -20,5 +23,7 @@ public class Restaurant
     @Column(unique = true, nullable = false)
     private String telephone;
 
+    @OneToMany(mappedBy = "restaurant")
+    private List<Menu> menus = new ArrayList<>();
 
 }
