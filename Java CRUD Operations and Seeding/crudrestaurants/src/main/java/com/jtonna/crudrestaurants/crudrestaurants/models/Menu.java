@@ -22,6 +22,9 @@ public class Menu {
     private double dishprice;
 
     // Relationship between Restaurant Model
-
+    // Since there are are going to be many "menu" to one restaurant, where a menu represents a menu item.
+    @ManyToOne
+    @JoinColumn(name = "restaurantid", nullable = false)
+    private Restaurant restaurant;
 
 }

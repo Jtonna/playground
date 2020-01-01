@@ -1,6 +1,8 @@
 package com.jtonna.crudrestaurants.crudrestaurants.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "restaurants")
@@ -28,6 +30,8 @@ public class Restaurant {
     private String telephone;
 
     // Relationship between Menu Model
-
+    // Since there is many "menu" to one restaurant, we want to store them as an array list
+    @OneToMany(mappedBy = "restaurant")
+    private List<Menu> menus = new ArrayList<>();
 
 }
