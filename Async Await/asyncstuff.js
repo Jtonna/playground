@@ -187,21 +187,117 @@ if (true === false){
 
 // Things to avoid
 
-// Careful! Avoid getting too sequential https://developers.google.com/web/fundamentals/primers/async-functions#careful_avoid_going_too_sequential
-async function seriesOfEvents(){
+// Careful! Avoid getting too sequential
+if(true === false){
+    async function seriesOfEvents(){
 
-    // Bringing the wait function back used to wait a few seconds before doing something
-    function wait(ms){
-        return new Promise(responseBanana => setTimeout(responseBanana, ms))
+        // Bringing the wait function back used to wait a few seconds before doing something
+        function wait(ms){
+            return new Promise(responseBanana => setTimeout(responseBanana, ms))
+        }
+    
+        // This is an example of getting too sequential, meaning one line/timer starts when the other one finishes
+        console.log("Were going to wait a 3 seconds, 1.5 seconds to say something & then another 1.5 to say something else \n--")
+        await wait(3000)
+        await wait(1500); // Wait 1 second
+        console.log("hello")
+        await wait(1500); // Wait 1 more second
+        console.log("world")
+    
+        console.log("that took 3 seconds to run... + computational time which should have been very fast unless youre on an intel pentium processor")
     }
-
-    console.log("Were going to wait 1.5 seconds to say something & then another second to say something else \n--")
-    await wait(1500); // Wait 1 second
-    console.log("hello")
-    await wait(1500); // Wait 1 more second
-    console.log("world")
-
-    console.log("that took 3 seconds to run... + computational time which should have been very fast unless youre on an intel pentium processor")
+    
+    seriesOfEvents()
 }
 
-seriesOfEvents()
+// How to avoid being sequential
+if (true === false){
+    async function parallel(){
+
+        // Bringing the wait function back, used for a time delay
+        function wait(ms){
+            return new Promise(responseBanana => setTimeout(responseBanana, ms))
+        }
+    
+        // This is an example of running clock's / timer's in parallel or "asynchronously"
+        const wait1 = wait(7000) // 7 seconds
+        const wait2 = wait(7000) // 7 seconds
+    
+        // lets call the time delays, we can use our phones "stop watch" to measure the time, just manually invoke from our console using "parallel()" and start the timer at roughly the same time
+        console.log("Instructed to wait 7 seconds (1)")
+        await wait1; // Wait 7 seconds for the first timer
+        console.log("Instructed to wait 7 seconds (2)")
+        await wait2; // When the first timer runs out, this one should as well since they both started at the same time
+    
+        return(console.log("Just waited 7, not 14 seconds to tell you; I love you!"))
+    }
+    // parallel()
+}
+
+// Lets output fetches in order
+// Lets assume we have a few URL's to get data from, we could do it like this
+
+// These API Url's serve dummy data for testing, see https://jsonplaceholder.typicode.com/
+const listOfUrls = [
+    'https://jsonplaceholder.typicode.com/posts/1',
+    'https://jsonplaceholder.typicode.com/posts/2',
+    'https://jsonplaceholder.typicode.com/posts/3',
+    'https://jsonplaceholder.typicode.com/posts/4',
+    'https://jsonplaceholder.typicode.com/posts/5'
+]
+
+// Lets output fetches in-order (using promises)
+if (true === false) {
+    function logInOrder(urls){
+        // Fetch all of the URL's in the array
+        const textPromises = urls.map(url => {
+            // console.log("requested to fetch", url) // As you can see everything gets fetched one after another and doesnt wait for a response before fetching the next item
+            return fetch(url)
+                .then(response => response.text())
+                // .then(console.log("finished fetching", url)) // Uncommenting this, youll see that it fetches and doesnt wait for the response before fetching the next item
+        })
+    
+        // Log them all in order
+        textPromises.reduce((chain, textPromise) => {
+            return chain.then(() => textPromise)
+                .then(text => console.log('Data from the fetch', text));
+        }, Promise.resolve())
+    }
+    logInOrder(listOfUrls)
+}
+
+// Lets output fetches in-order (too sequential) 1 by 1
+// Note: this is slower than the promises example as it waits until the second fetch doesnt begin until the first one has been finished
+if (true == false) {
+    async function logInOrder(urls){
+        // For each item in the url's array
+        for(const url of urls){
+            const response = await fetch(url)
+            console.log("fetching", url, "like the dog i am.")
+            console.log(await response.text())
+            console.log("\n")
+        }
+    }
+    logInOrder(listOfUrls)
+}
+
+// Lets output fetches in parallel using a boring "for" loop
+async function logInOrder(urls){
+
+    // fetch all of the url's in parallel & store them as textPromises
+    const textPromises = urls.map(async url=> {
+        const response = await fetch(url);
+        return(response.text())
+    })
+
+    // Log the responses from textPromises sequentially
+    for (const textPromise of textPromises){
+        console.log("here comes a response from textPromises")
+        console.log(await textPromise)
+        console.log("glad that worked")
+        console.log("\n")
+    }
+}
+logInOrder(listOfUrls)
+
+// https://developers.google.com/web/fundamentals/primers/async-functions
