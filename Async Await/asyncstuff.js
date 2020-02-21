@@ -50,7 +50,40 @@ if (true === false){
     f4()
 }
 
-// This half of the document was created using examples from https://developers.google.com/web/fundamentals/primers/async-functions
+// Lets take a look at using fetch with async
+const myGithubProfileUrl = "https://api.github.com/users/Jtonna"
+if (true === false) {
+    async function getGithubAvatar(){
+        console.log("getGithubAvater(), were going to wait 7 seconds, then fetch the data")
+
+        // wait 7 seconds
+        await new Promise((resolve, reject) =>
+        setTimeout(resolve, 7000)
+        )
+
+        // read github user
+        let githubResponse = await fetch(myGithubProfileUrl)
+        let githubUser = await githubResponse.json();
+        console.log("Fetching github data")
+
+        // Create DOM element for the avatar
+        let img = document.createElement('img');
+        img.src = githubUser.avatar_url
+        img.className = githubUser.id+"-profile-picture"
+        document.body.append(img)
+        console.log("Created DOM Element\nheres the data we used")
+
+        return console.log(githubUser)
+    }
+
+    getGithubAvatar()
+}
+
+
+
+
+// This half of the document was created using examples from
+// https://developers.google.com/web/fundamentals/primers/async-functions
 
 // URL Used for fetching
 const nasaPhotoOfTheDayURL = "https://api.nasa.gov/planetary/apod?api_key=c9Sk2PjC4vxNM3SRQ5iZKdws0EYWUHboPuW4HtQb"
@@ -268,7 +301,7 @@ if (true === false) {
 
 // Lets output fetches in-order (too sequential) 1 by 1
 // Note: this is slower than the promises example as it waits until the second fetch doesnt begin until the first one has been finished
-if (true == false) {
+if (true === false) {
     async function logInOrder(urls){
         // For each item in the url's array
         for(const url of urls){
@@ -282,22 +315,22 @@ if (true == false) {
 }
 
 // Lets output fetches in parallel using a boring "for" loop
-async function logInOrder(urls){
+if (true === false){
+    async function logInOrder(urls){
 
-    // fetch all of the url's in parallel & store them as textPromises
-    const textPromises = urls.map(async url=> {
-        const response = await fetch(url);
-        return(response.text())
-    })
-
-    // Log the responses from textPromises sequentially
-    for (const textPromise of textPromises){
-        console.log("here comes a response from textPromises")
-        console.log(await textPromise)
-        console.log("glad that worked")
-        console.log("\n")
+        // fetch all of the url's in parallel & store them as textPromises
+        const textPromises = urls.map(async url=> {
+            const response = await fetch(url);
+            return(response.text())
+        })
+    
+        // Log the responses from textPromises sequentially
+        for (const textPromise of textPromises){
+            console.log("here comes a response from textPromises")
+            console.log(await textPromise)
+            console.log("glad that worked")
+            console.log("\n")
+        }
     }
+    logInOrder(listOfUrls)
 }
-logInOrder(listOfUrls)
-
-// https://developers.google.com/web/fundamentals/primers/async-functions
