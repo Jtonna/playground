@@ -14,7 +14,7 @@ You should make sure you're using Java 11.0.5 to ensure there's full compatibili
 
 Directory HelloWorld was created to just say hello world, as well as make sure compiler commands are functioning properly
 
-Directory Syntax was created to re-visit basic syntax, strings, ints, long, private, arrays, conditionals etc.
+Directory Syntax was created to re-visit basic syntax, it contains EmployeeAPP and SnackBar which are two different applications that are very similar in structure. They are taken from the LambdaSchool Legacy TK
 
 Directory L33T was created to do a few popular leet code challenges in java
 
@@ -55,6 +55,6 @@ Here's a link to the legacy lambda school TK
     - https://www.youtube.com/watch?v=Pi0iJroM8_4
     - https://www.youtube.com/watch?v=CQSTMaRslOM
     - https://www.youtube.com/watch?v=mzIxwmNGKjI
-  - Link to the lecture for the page
-    - l
+  - Link to the lecture Java 1 JDK & Classes
+    -  https://www.youtube.com/watch?v=KxlshdOy0sY&feature=youtu.be 
 
