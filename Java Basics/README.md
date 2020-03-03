@@ -4,6 +4,14 @@ This branch / folder was created to re-visit java at its core, and is mainly int
 
 Its important to not forget Java is "compiled", meaning every program has to be compiled before it can be ran. When it gets compiled it turns into Bytecode. Bytecode is what runs on multiple machines in something called a JVM "java virtual machine", this JVM is what configures the bytecode to allow your one program to run on windows, mac and linux machines without you having to create different versions of the program for multiple systems.
 
+Every Java application has a "src" folder, this is a required name. Common folder structure should be
+
+- AppNameHere
+  - src
+    - PackageNameHere (this could also be the app name if you want)
+      - file - Main.java
+      - other files or more folders/files
+
 
 
 ## Setup
