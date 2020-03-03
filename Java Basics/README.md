@@ -10,7 +10,7 @@ Its important to not forget Java is "compiled", meaning every program has to be 
 
 For this branch / folder we are going to be using IntelliJ Idea Ultimate, but sublime or VS Code should work just as well.
 
-You should make sure you're using Java 11.3 to ensure there's full compatibility.
+You should make sure you're using Java 11.0.5 to ensure there's full compatibility.
 
 Directory HelloWorld was created to just say hello world, as well as make sure compiler commands are functioning properly
 
@@ -40,12 +40,13 @@ Lets assume we have a PACKAGE named hello, we would run the following command's 
 
 `java -jar hellothere.jar`	
 
+- runs the jar file names hellothere.jar
+
 ## Resources
 
 Java Docs
 
 -  https://docs.oracle.com/en/java/javase/11/ 
-- 
 
 Here's a link to the legacy lambda school TK
 
