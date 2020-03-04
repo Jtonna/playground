@@ -17,4 +17,6 @@ public class Company
         this.name = name;
         this.debt = debt;
     }
+
+    // no getters or setters
 }
