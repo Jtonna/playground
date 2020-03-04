@@ -3,7 +3,7 @@ package employeeApplication; // name of the package
 public class Company
 {
     // Fields
-    private static maxId = 0;
+    private static int maxId = 0;
     public final static double match401k = 0.05; // Final is basically a const in javascript, meaning it cant be changed & Static means all objects share it
 
     public int id;
@@ -11,9 +11,9 @@ public class Company
     public int debt;
 
     // Constructor
-    public Company
+    public Company(String name, int debt)
     {
-        this.id = id;
+        this.id = maxId++;
         this.name = name;
         this.debt = debt;
     }
