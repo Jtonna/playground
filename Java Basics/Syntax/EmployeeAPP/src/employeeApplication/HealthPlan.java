@@ -8,7 +8,7 @@ public class HealthPlan
     private String name;
 
     // construtor
-    public Healthplan(String name)
+    public HealthPlan(String name)
     {
         // Set data
         maxId++; // Increment maxId by 1
