@@ -3,6 +3,7 @@ package employeeApplication; // Name of the package
 public class Employee
 {
     // Fields (every employee has)
+    private static int maxId = 0; // static means all of the "objects" ever created share this field, but they will have different values.
     private int id;
     private String fname;
     private String lname;
@@ -17,7 +18,12 @@ public class Employee
     // note, we dont set the "int id" because
     public Employee(String fname, String lname, double salary, boolean has401k, int companyID, int healthPlanID)
     {
-        // Set the values passed in to the fields
+        // this Constructor sets the values passed into the class Employee, to the fields we defined above.
+
+        // increment maxId by 1 & let the id for the current "employee" = the incremented "maxId"
+        maxId++;
+        id = maxId;
+
         // this.<something> is a field, whatever it equals is the passed in value
         this.fname = fname;
         this.lname = lname;
@@ -38,7 +44,8 @@ public class Employee
         // example: "Jacob Tonna"
     }
 
-    // Everything below this was auto generated
+    // Auto Generated Getters and Setters
+    // NOTE: @override below
 
     public int getId()
     {
@@ -108,5 +115,19 @@ public class Employee
     public void setHealthPlanID(int healthPlanID)
     {
         this.healthPlanID = healthPlanID;
+    }
+
+    @Override
+    public String toString()
+    {
+        String rtnSrt = "id: " + id + "\n"
+                        "fname: " + fname + "\n"
+                        "lname: " + lname + "\n"
+                        "salary: " + salary + "\n"
+                        "has401k: " + has401k + "\n"
+                        "companyId: " + companyId + "\n"
+                        "healthPlanID: " healthPlanID + "\n";
+
+        return rtnSrt;
     }
 }
