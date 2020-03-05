@@ -56,13 +56,3 @@ Java Docs
 
 -  https://docs.oracle.com/en/java/javase/11/ 
 
-Here's a link to the legacy lambda school TK
-
-- https://learn-legacy.lambdaschool.com/jx/module/recTjABibr9czChyE/ 
-  - Here are links to videos in order that are available on the page.
-    - https://www.youtube.com/watch?v=Pi0iJroM8_4
-    - https://www.youtube.com/watch?v=CQSTMaRslOM
-    - https://www.youtube.com/watch?v=mzIxwmNGKjI
-  - Link to the lecture Java 1 JDK & Classes
-    -  https://www.youtube.com/watch?v=KxlshdOy0sY&feature=youtu.be 
-
