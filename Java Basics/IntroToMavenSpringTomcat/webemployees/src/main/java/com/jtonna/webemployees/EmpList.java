@@ -1,5 +1,18 @@
 package com.jtonna.webemployees;
 
+import java.util.ArrayList;
+
 public class EmpList
 {
+    // public ArrayList of class Employee named empList = a new Array list
+    public ArrayList<Employee> empList = new ArrayList<>();
+
+    // Constructor (creates objects)
+    public EmpList()
+    {
+        // array emplist add new Employee <data>
+        empList.add(new Employee("Jacob", "Tonna", 90942, true, 1 ,2));
+        empList.add(new Employee("Alf", "Garsia", 24942, false, 3 ,1));
+        empList.add(new Employee("Roobin", "Ponce", 67942, true, 2 ,1));
+    }
 }
