@@ -46,7 +46,7 @@ public class Main
         System.out.println("Original mod 2     " + (c1.debt % 2));
         System.out.println("Original divided 7 " + (c1.debt / 7));
         System.out.println("Original divided 7 " + (c1.debt / 7.0));
-        System.out.println("Original divided 7 " + ((double)c1.debt / 7));
+        System.out.println("Original divided 7 " + ((double) c1.debt / 7));
         System.out.println();
         String myStr = "100";
         System.out.println("Debt: " + myStr + c1.debt);

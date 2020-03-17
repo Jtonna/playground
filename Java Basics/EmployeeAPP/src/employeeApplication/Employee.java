@@ -117,16 +117,9 @@ public class Employee
         this.healthPlanID = healthPlanID;
     }
 
-    @Override
-    public String toString()
+    @Override public String toString()
     {
-        String rtnStr = "id: " + id + "\n" +
-                "fname: " + fname + "\n" +
-                "lname: " + lname + "\n" +
-                "salary: " + salary + "\n" +
-                "has401k: " + has401k + "\n" +
-                "companyID: " + companyID  + "\n" +
-                "healthPlanID: " + healthPlanID + "\n";
+        String rtnStr = "id: " + id + "\n" + "fname: " + fname + "\n" + "lname: " + lname + "\n" + "salary: " + salary + "\n" + "has401k: " + has401k + "\n" + "companyID: " + companyID + "\n" + "healthPlanID: " + healthPlanID + "\n";
         return rtnStr;
     }
 }
