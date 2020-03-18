@@ -16,7 +16,7 @@ public class Employee
     // Constructor
     public Employee(String fname, String lname, double salary, boolean has401K, int companyID, int healthPlanID)
     {
-        this.id = counter.incrementAndGet(); // Assign the id
+        this.id = counter.incrementAndGet(); // Assign the id using a built in function.
         this.fname = fname;
         this.lname = lname;
         this.salary = salary;

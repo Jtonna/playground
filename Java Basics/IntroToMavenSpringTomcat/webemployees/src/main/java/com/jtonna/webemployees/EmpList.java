@@ -13,6 +13,6 @@ public class EmpList
         // array emplist add new Employee <data>
         empList.add(new Employee("Jacob", "Tonna", 90942, true, 1 ,2));
         empList.add(new Employee("Alf", "Garsia", 24942, false, 3 ,1));
-        empList.add(new Employee("Roobin", "Ponce", 67942, true, 2 ,1));
+        empList.add(new Employee("Roobin", "Pantse", 67942, true, 2 ,1));
     }
 }
