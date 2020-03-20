@@ -15,4 +15,30 @@ public class EmpList
         empList.add(new Employee("Alf", "Garsia", 24942, false, 3 ,1));
         empList.add(new Employee("Roobin", "Pantse", 67942, true, 2 ,1));
     }
+
+    public Employee findEmployee(CheckEmployee tester)
+    {
+        for(Employee e: empList)
+        {
+            if (tester.test(e))
+            {
+                return e;
+            }
+        }
+        return null; // if no employees are found
+    }
+
+    public ArrayList<Employee> findEmployees(CheckEmployee tester)
+    {
+        ArrayList<Employee> tempEmpList = new ArrayList<>();
+
+        for (Employee e: empList)
+        {
+            if (tester.test(e))
+            {
+                tempEmpList.add(e);
+            }
+        }
+        return tempEmpList;
+    }
 }
