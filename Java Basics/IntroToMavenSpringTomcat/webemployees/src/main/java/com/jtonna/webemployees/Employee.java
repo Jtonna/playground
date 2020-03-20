@@ -25,6 +25,19 @@ public class Employee
         this.healthPlanID = healthPlanID;
     }
 
+    // Clone an Employee for CalculationController
+    public Employee (Employee toClone)
+    {
+        this.id = toClone.getId();
+        this.fname = toClone.getFname();
+        this.lname = toClone.getLname();
+        this.salary = toClone.getSalary();
+        this.has401K = toClone.isHas401K();
+        this.companyID = toClone.getCompanyID();
+        this.healthPlanID = toClone.getHealthPlanID();
+
+    }
+
     // Getters and Setters
 
     // The ID gets set automatically so we dont want a setter, just a getter
