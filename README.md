@@ -1,9 +1,7 @@
 # Welcome to my "Playground"
-This repository is used to contain small projects where i wanted to either test out ideas, develop something very small and personal or just wanted to get familiar with a language, tool, development pattern etc.
+This repo contains various projects of various languages. Its primarily used to test out ideas, get familiar with some trickery syntax & or design patterns/algorithm's.
 
-
-
-I'm not going to list every project here, but I will do my best documenting projects inside the child folders of this repo. There should be a "README" at the bottom of each folders page that describes the project in some way.
+Please see individual files based on language name, framework or library name below to see what projects exist there.
 
 
 
