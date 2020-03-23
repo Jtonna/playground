@@ -5,5 +5,5 @@ public interface Animal
 {
     void move();
     void eat(int i);
-    String spreak();
+    String speak();
 }
