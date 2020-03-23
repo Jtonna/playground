@@ -1,12 +1,24 @@
-# Java Spring Boot Basics
+# Java Projects
 
-This portion of the repo contains various projects designed to re-introduce java concepts and spring boot design patterns. There is also some database work included that can all be run locally using H2 instead of postgres if you wish.
+Welcome to the Java Projects Repo. Most of the work i do here is for personal use, just testing out logic & design patterns as well as learning new tricks.
+
+Each project is going to be listed below along with resources (if any) that I found useful in understanding concepts.
+
+#### Software Used
+
+- Intellij
+
+- Java 11
+
+- Maven 3 (bundled with intellij)
+
+- Tomcat 9
+
+- Postgres SQL 12.2
 
 
 
-Each project is going to be listed below along with resources (if any) that i found useful in understanding concepts.
-
-
+# Projects
 
 ### Hello World
 
