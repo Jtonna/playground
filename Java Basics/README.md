@@ -1,58 +1,40 @@
-# Java Basic's
+# Java Spring Boot Basics
 
-This branch / folder was created to re-visit java at its core, and is mainly intended as a refresher into the language as I have been working with JavaScript, Python & C++  lately and have forgotten the syntax of the language.
-
-Its important to not forget Java is "compiled", meaning every program has to be compiled before it can be ran. When it gets compiled it turns into Bytecode. Bytecode is what runs on multiple machines in something called a JVM "java virtual machine", this JVM is what configures the bytecode to allow your one program to run on windows, mac and linux machines without you having to create different versions of the program for multiple systems.
-
-Every Java application has a "src" folder, this is a required name. Common folder structure should be
-
-- AppNameHere
-  - src
-    - PackageNameHere (this could also be the app name if you want)
-      - file - Main.java
-      - other files or more folders/files
+This portion of the repo contains various projects designed to re-introduce java concepts and spring boot design patterns. There is also some database work included that can all be run locally using H2 instead of postgres if you wish.
 
 
 
-## Setup
-
-For this branch / folder we are going to be using IntelliJ Idea Ultimate, but sublime or VS Code should work just as well.
-
-You should make sure you're using Java 11.0.5 to ensure there's full compatibility.
-
-Directory HelloWorld was created to just say hello world, as well as make sure compiler commands are functioning properly
-
-Directory Syntax was created to re-visit basic syntax, it contains EmployeeAPP and SnackBar which are two different applications that are very similar in structure. They are taken from the LambdaSchool Legacy TK
-
-Directory L33T was created to do a few popular leet code challenges in java
+Each project is going to be listed below along with resources (if any) that i found useful in understanding concepts.
 
 
 
-## How to compile
+### Hello World
 
-Lets assume we have a PACKAGE named hello, we would run the following command's from the "src" directory to create an executable .jar file that can run on any machine
+Everyone should know what a "hello world" project is. It is the most basic introduction to console logging (or printing information) to the developer. 
 
-`javac hello/*.java`
+Steps to compile
 
-- javac = java compiler, creates .class files
-- hello = directory
-- /*.java = all files with the extension of .java
+1. From the SRC directory in command/bash run
+2. javac hello/*.java
+3. jar cvfe hellothere.jar hello.HelloWorld hello/*.class
+4. java -jar hellothere.jar
 
-`jar cvfe hellothere.jar hello.HelloWorld hello/*.class`
+The link below explains the compile commands listed above.
 
-- jar = 
-- C - create new archive file with given name
-- V -  generates verbose output
-- F - specifies the jar output file to be created
-- E -sets the main class to the called entry point
+https://docs.oracle.com/javase/6/docs/technotes/tools/solaris/jar.html
 
-`java -jar hellothere.jar`	
 
-- runs the jar file names hellothere.jar
 
-## Resources
+## EmployeeAPP
 
-Java Docs
+This is a simple application that visits use of constructors, static and instance variables (fields), accessors, public and private methods.
 
--  https://docs.oracle.com/en/java/javase/11/ 
+The application is simple; there are employees who have values associated with their object that allow them to be associated with a "company" by a company ID. and using the same logic for companies we can also give employees access to healthplans.
 
+
+
+## Intro To Maven Spring Tomcat
+
+This application has the same concepts as EmployeeAPP, except the employees data is accessible over a REST API. There is also a specific GET endpoint that allows you to pass in a float value to see what the employees salary would look like if you gave them a raise. It also utilizes the 200 response that is (OK)
+
+https://restfulapi.net/
