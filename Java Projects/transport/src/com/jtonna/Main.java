@@ -5,9 +5,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        // write your code here
-
-        // Create new horses
+        // Create new horses from Interfaces
         Horse seabiscuit = new Horse("Seabiscuit");
         Horse affirmed = new Horse("Affirmed");
         Horse joe = new Horse("Joe");
@@ -24,6 +22,21 @@ public class Main
         };
         System.out.println("Seabiscuit's fuel level after moving: " + seabiscuit.getFuelLevel() );
         System.out.println();
+
+        // Now lets make a Horse from an Abstract Class
+        System.out.println("*** Horse from Abstract Class");
+        HorseFromVehicle secretatiat = new HorseFromVehicle("Secretatiat", 10);
+        HorseFromVehicle trigger = new HorseFromVehicle("Trigger", 10);
+        HorseFromVehicle seattleSlew = new HorseFromVehicle("Seattle Slew", 10);
+        HorseFromVehicle americanPharoah = new HorseFromVehicle("American Pharoah", 10);
+        HorseFromVehicle eclipse = new HorseFromVehicle("Eclipse");
+
+        // Do things
+        secretatiat.addFuel(10);
+        eclipse.move(10);
+
+        
+
 
     }
 }

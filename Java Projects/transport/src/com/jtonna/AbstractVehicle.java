@@ -5,7 +5,7 @@ package com.jtonna;
 // This means we dont need to use @override methods like we do in Vehicle and Animal.
 public abstract class AbstractVehicle
 {
-    private int fuel;
+    protected int fuel;
 
     public AbstractVehicle(int fuel)
     {
