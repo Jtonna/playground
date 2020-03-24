@@ -35,7 +35,17 @@ public class Main
         secretatiat.addFuel(10);
         eclipse.move(10);
 
-        
+        // Create Auto's (cars)
+        System.out.println("*** Auto from Abstract Class");
+        Auto bugatti = new Auto(24,"bugatti", 2020);
+        Auto vw = new Auto(5, "Euro Van", 2000);
+        Auto toyota = new Auto(10, "Tundra", 1998);
+
+        // do things
+        bugatti.move(12);
+        vw.move(2);
+        toyota.addFuel(354);
+        toyota.move(254);
 
 
     }

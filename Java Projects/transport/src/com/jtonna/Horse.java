@@ -14,7 +14,7 @@ public class Horse implements Vehicle, Animal
     // Get & set names
     public String getName()
     {
-        return name;
+        return name.toUpperCase();
     }
 
     public void setName(String name)
