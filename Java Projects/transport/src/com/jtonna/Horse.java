@@ -5,7 +5,7 @@ public class Horse implements Vehicle, Animal
     private int fuel = 0;
     private String name;
 
-    // Constructor
+    // Constructor for its name
     public Horse(String name)
     {
         this.name = name;
