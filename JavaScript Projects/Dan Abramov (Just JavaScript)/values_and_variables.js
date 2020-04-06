@@ -148,3 +148,14 @@ x = 0;
 // We "un-hook" the wire between x & 10 and create a new value (0) and we connect them together.
 // So Y is still 10 and X is now 0
 
+/*
+    Recap
+*/
+
+// Primitive values are immutable, they never change, they can only be replaced by re-connecting the wire to a new value
+// Variables are not values, Each variable points to a particular value, we can change which value it points to by using the "=" assignment operator
+// Variablea are like wires. The "wire" idea is here to help us imagine how variables point to values
+// Contradictions, if two things we know seem to contradict, this means that we need to look deeper.
+// Nouns and verbs matter when were building a mental model.
+
+
