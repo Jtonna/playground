@@ -59,3 +59,25 @@ fifty.shades = 'gray'
 // In dans JavaScript mental model, all primitive values exist in the outer circle further from his code, like distant star's.
 // he can refer to them and create new ones, but he cant change them, they stay what they are.
 
+/*
+    The Contradiciton???
+    Dan just demonstrated primitive values are read-only, aka immutable.
+    Heres another snippet to test out mental model.
+*/
+
+let pet = "Narwhal";
+pet = "The Kraken";
+console.log(pet) // "The Kraken"
+// This doesnt modify the string directly at a given location, it sets a completely new value.
+// This is allowed.
+
+// Eventhough it seems like a contradiction the diffrence is that we are completely replacing the string with a new one, instead of trying to mutate (change/modify) the original one.
+// We can think of this as variables being wires attached to a value, we just changed whats attached to the value, the old one is no longer there, its eaten up by the garbage collector.
+// Variables are NOT values, Variables point to value's, we just change what its pointing to.
+
+
+/*
+    Variables Are Wires
+    Dan wants us to start thinking of the (variable = value) setup as Variables attached to Values by Wires
+*/
+
