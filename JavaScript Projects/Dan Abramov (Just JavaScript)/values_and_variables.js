@@ -99,3 +99,15 @@ let someVariableName = "whatever type of value you want"
 
 // the right side of this must be an expression, it can be something simple like a string or an int
 // Or it could be math, it could refer to multiple other variables and evaluate to a true or false statement
+
+/*
+    Reasing a Value of a Variable
+*/
+
+// We can also read the value of a variable, for example
+console.log(pet)
+
+// We need to remember console.log() is a function, we cant really pass variables to functions.
+// What were doing is passing the value of pet. At runtime, it finds pet and follows its "wire" to get its value
+// Then we pass the value to the console.log() function
+
