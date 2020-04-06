@@ -83,9 +83,9 @@ console.log(pet) // "The Kraken"
 
 // lets take a look at this example again
 
-let pet = 'Narwhal';
-pet = 'The Kraken';
-console.log(pet); // "The Kraken"
+let pet2 = 'Narwhal';
+pet2 = 'The Kraken';
+console.log(pet2); // "The Kraken"
 
 // We know string values cant change because they are primitives, but the "pet" variable does change to "The Kraken"
 // This may seem like a contradiction buts its not. We only said primitive values cant change, we didnt say anything about variables.
@@ -110,4 +110,24 @@ console.log(pet)
 // We need to remember console.log() is a function, we cant really pass variables to functions.
 // What were doing is passing the value of pet. At runtime, it finds pet and follows its "wire" to get its value
 // Then we pass the value to the console.log() function
+
+/*
+    Nouns and Verbs
+*/
+
+// We need to have clarity on what we can do with each concept, for example.
+// We cant skate a bike, we cant fly an avocado and we cant sing a mosquito. Just like we cant pass a variable (at least not in javascript)
+// This is why these details matter.
+
+function double (x){
+    x = x * 2
+}
+
+let money = 10
+double(money)
+console.log(money) // What will this return??
+
+// If we thought double(money) was passing an variable, we could expect that x = x * 2 would double that variable
+// But thats not how it works, we know that double(money) means to "figure out the value of money and pass that value to double."
+// So the answer is 10
 
