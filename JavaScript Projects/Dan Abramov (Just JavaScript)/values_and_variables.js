@@ -131,3 +131,20 @@ console.log(money) // What will this return??
 // But thats not how it works, we know that double(money) means to "figure out the value of money and pass that value to double."
 // So the answer is 10
 
+/* 
+    Putting It Together
+*/
+
+// Now lets revisit the first example from mental models
+let x = 10;
+let y = x;
+x = 0;
+
+// Taking out a paper or drawing app and drawing wires from x -> y variables step by step
+// reveals that for the first two lines we have 2 variables floating in space (x & y) and one value (10)
+// both x & y have wires connected to the same value (10)
+
+// finally we get to the third line
+// We "un-hook" the wire between x & 10 and create a new value (0) and we connect them together.
+// So Y is still 10 and X is now 0
+
