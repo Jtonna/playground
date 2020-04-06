@@ -81,3 +81,21 @@ console.log(pet) // "The Kraken"
     Dan wants us to start thinking of the (variable = value) setup as Variables attached to Values by Wires
 */
 
+// lets take a look at this example again
+
+let pet = 'Narwhal';
+pet = 'The Kraken';
+console.log(pet); // "The Kraken"
+
+// We know string values cant change because they are primitives, but the "pet" variable does change to "The Kraken"
+// This may seem like a contradiction buts its not. We only said primitive values cant change, we didnt say anything about variables.
+
+// !Variables are not values, variables instead point to values.
+// In dans mental model, a variable has a wire, with one loose end that can be attached to any value.
+// Thus the variable points to the value.
+
+// The left side of an assignment must be a "wire" meaning that it must define a variable
+let someVariableName = "whatever type of value you want"
+
+// the right side of this must be an expression, it can be something simple like a string or an int
+// Or it could be math, it could refer to multiple other variables and evaluate to a true or false statement
