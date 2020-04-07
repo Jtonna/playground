@@ -1,7 +1,5 @@
 package com.jtonna;
 
-import java.util.ArrayList;
-
 public class Main
 {
 
@@ -26,7 +24,7 @@ public class Main
         System.out.println();
 
         // Now lets make a Horse from an Abstract Class
-        System.out.println("*** adding Horses from Abstract Class");
+        System.out.println("*** Horse from Abstract Class");
         HorseFromVehicle secretatiat = new HorseFromVehicle("Secretatiat", 10);
         HorseFromVehicle trigger = new HorseFromVehicle("Trigger", 10);
         HorseFromVehicle seattleSlew = new HorseFromVehicle("Seattle Slew", 10);
@@ -38,7 +36,7 @@ public class Main
         eclipse.move(10);
 
         // Create Auto's (cars)
-        System.out.println("*** adding Autos from Abstract Class");
+        System.out.println("*** Auto from Abstract Class");
         Auto bugatti = new Auto(24,"bugatti", 2020);
         Auto vw = new Auto(5, "Euro Van", 2000);
         Auto toyota = new Auto(10, "Tundra", 1998);
@@ -49,13 +47,6 @@ public class Main
         toyota.addFuel(354);
         toyota.move(254);
 
-        ArrayList<AbstractVehicle> myList = new ArrayList<AbstractVehicle>();
-        myList.add(bugatti);
-        myList.add(vw);
-        myList.add(secretatiat);
-        myList.add(trigger);
-        myList.add(americanPharoah);
 
-        System.out.println("Array list from abstract class: " + myList);
     }
 }
