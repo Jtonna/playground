@@ -37,6 +37,16 @@ https://docs.oracle.com/javase/6/docs/technotes/tools/solaris/jar.html
 
 
 
+## Transportation
+
+This application demonstrates the difference's between Abstract Classes & Interfaces.
+
+There is an animal interface and a vehicle one, for all animals and vehicles to use to do things like "move" & "eat / refuel".
+
+Then there is the AbstractVehicle which has the ability to "move", "get fuel" & "add fuel". And we create horses & cars from it, whilst giving each of those childs classes custom methods and full access to the parent methods.
+
+
+
 ## EmployeeAPP
 
 This is a simple application that visits use of constructors, static and instance variables (fields), accessors, public and private methods.
