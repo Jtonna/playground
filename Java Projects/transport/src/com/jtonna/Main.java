@@ -66,18 +66,29 @@ public class Main
         myList.add(secretatiat);
         myList.add(trigger);
         myList.add(americanPharoah);
-
-        System.out.println("Array list from abstract class: " + myList);
+        myList.add(toyota);
 
         // Lambda Expressions
         System.out.println("*** Lambda Expressions");
-        System.out.println(" x -> Y"); // anonymous functions basically
-        System.out.println("Vehicles in list with a fuel level > 15");
+        System.out.println("* x -> Y"); // anonymous functions basically
+        System.out.println();
 
         // filter data lambda expressions
-        printVehicles(myList, v -> v.getFuelLevel() > 15); // print if the fuel is level is greater than 15
+        System.out.println("* Vehicles in list with a fuel level > 0");
+        printVehicles(myList, v -> v.getFuelLevel() > 0); // print if the fuel is level is greater than 0
+        System.out.println();
+        System.out.println("* Vehicles wit fuel level > 0 & are from the HorseFromVehicle class");
+        printVehicles(myList, v -> (v.getFuelLevel() > 0 ) && (v instanceof HorseFromVehicle) ); // print if the fuel level is greater than 0 and is from the HorseFromVehicle class
+        System.out.println();
 
-        // sort data lambda expressions
+        System.out.println("* Every item in the list using lambda expression");
+        myList.forEach( (v) -> System.out.println(v) ); // Print every item in the list out
+        System.out.println();
+
+        // sort data using lambda expression (we should only sort by things that are common between all objects
+        System.out.println("* Sort the list and re-print");
+        myList.sort( (v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()) ); // sort the list
+        myList.forEach( (v) -> System.out.println(v)); // print the sorted list
     }
 
 }
