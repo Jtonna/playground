@@ -85,10 +85,15 @@ public class Main
         myList.forEach( (v) -> System.out.println(v) ); // Print every item in the list out
         System.out.println();
 
-        // sort data using lambda expression (we should only sort by things that are common between all objects
+        // sort data using lambda expression (we should only sort by things that are common between all objects)
         System.out.println("* Sort the list and re-print");
-        myList.sort( (v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()) ); // sort the list
+        myList.sort( (v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()) ); // sort the array list
         myList.forEach( (v) -> System.out.println(v)); // print the sorted list
+        System.out.println();
+
+        // just print out the names from the sorted list
+        System.out.println("* Print names from the sorted array list");
+        myList.forEach( (v) -> System.out.println(v.getName()));
     }
 
 }
