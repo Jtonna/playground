@@ -5,6 +5,17 @@ import java.util.ArrayList;
 public class Main
 {
 
+    // Function that, well... prints vehicles
+    public static void printVehicles(ArrayList<AbstractVehicle> vehicles, CheckVehicle tester)
+    {
+        for(AbstractVehicle veh : vehicles)
+        {
+            if(tester.test(veh))
+            {
+                System.out.println(veh.getName() + " " + veh.getFuelLevel());
+            }
+        }
+    }
     public static void main(String[] args)
     {
         // Create new horses from Interfaces
@@ -57,5 +68,16 @@ public class Main
         myList.add(americanPharoah);
 
         System.out.println("Array list from abstract class: " + myList);
+
+        // Lambda Expressions
+        System.out.println("*** Lambda Expressions");
+        System.out.println(" x -> Y"); // anonymous functions basically
+        System.out.println("Vehicles in list with a fuel level > 15");
+
+        // filter data lambda expressions
+        printVehicles(myList, v -> v.getFuelLevel() > 15); // print if the fuel is level is greater than 15
+
+        // sort data lambda expressions
     }
+
 }
