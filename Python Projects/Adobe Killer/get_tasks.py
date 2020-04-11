@@ -1,7 +1,7 @@
 import subprocess
 
 # Dictionary that will contain a list of all running processes on the machine
-processes = dict()
+kill_list = dict()
 
 # Gets running tasks on the windows machine in order of ProcessID, Caption (name), CommandLine (location of file)
 def get_tasks():
@@ -17,19 +17,30 @@ def get_tasks():
     # For each individual "process" line in the "shell" we spawned
     num_of_lines_from_shell = int()
     num_of_processes = int()
+    num_of_adobe_processes = int()
     for process in processes_list.stdout:
 
         # Increment num_of_processes (used for index in the dict)
-        num_of_lines_from_shell = num_of_lines_from_shell +1
+        num_of_lines_from_shell = num_of_lines_from_shell + 1
 
         # Each "process" has a line length of 1070 for some reason, we use this to filter out lines that are irrelevant
         if len(process) == 1070:
             num_of_processes = num_of_processes + 1
 
+            # If the "process" contains the name "Adobe Killer", we continue since we dont want to add this process or related ones to the kill list
+            if "Adobe Killer" in process:
+                continue
+
+            # If the current process contains "Adobe"
+            if "Adobe" in process:
+                num_of_adobe_processes = num_of_adobe_processes + 1
+                print(process)
+
             
     
     print(f"num_of_lines_from_shell = {num_of_lines_from_shell}")
     print(f"num_of_processes = {num_of_processes}")
+    print(f"num_of_adobe_proc = {num_of_adobe_processes}")
         
 
 get_tasks()  
