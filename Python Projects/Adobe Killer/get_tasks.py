@@ -39,23 +39,28 @@ def get_the_tasks():
             if process.find("Adobe") != -1:
                 num_of_adobe_processes = num_of_adobe_processes + 1
 
+                # Variables for the following if
+                strings_found = 0
+
                 # For the current process, find the 3 sub-strings we want
+                if strings_found < 3:
+
+                        # Loop len(process) number of times
+                        for i in range(len(process)):
+                            current_index = process[i]
+                            next_index = process[i + 1]
+
+                            # Move through groups of spaces
+                            if current_index == ' ':
+                                if next_index == ' ':
+                                    continue
+
+
+
+
+
                 # if strings_found < 3
                 # 	loop over the entire string
-
-                # 		If we found a string
-                # 		if string_end_index is not NULL
-                # 			times_to_move = end_index - start_index
-                # 			for x in times_to_move
-                # 				add the current character to the compile_string array
-                # 			if strings_found is 0
-                # 				set the value of compile_string to name
-                # 			if its 1
-                # 				set the value to location
-                # 			if its 2
-                # 				set the value to pid
-
-                # 			increment strings_found
                         
                 # 		move through groups of spaces > 2
                 # 		if the current index and the next index is a space
