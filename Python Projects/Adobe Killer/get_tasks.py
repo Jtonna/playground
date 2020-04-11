@@ -35,12 +35,47 @@ def get_the_tasks():
             if "Adobe_Killer" in process:
                 continue
 
-            # If the current process contains "Adobe"
+            # If the current process contains "Adobe" we add it to the kill_list dict
             if process.find("Adobe") != -1:
                 num_of_adobe_processes = num_of_adobe_processes + 1
-                print(process)
 
-                # Add the Caption "process name" to the kill list dictionary
+                # For the current process, find the 3 sub-strings we want
+                # if strings_found < 3
+                # 	loop over the entire string
+
+                # 		If we found a string
+                # 		if string_end_index is not NULL
+                # 			times_to_move = end_index - start_index
+                # 			for x in times_to_move
+                # 				add the current character to the compile_string array
+                # 			if strings_found is 0
+                # 				set the value of compile_string to name
+                # 			if its 1
+                # 				set the value to location
+                # 			if its 2
+                # 				set the value to pid
+
+                # 			increment strings_found
+                        
+                # 		move through groups of spaces > 2
+                # 		if the current index and the next index is a space
+                # 			move on to the next index
+
+                # 		identify the start of a NEW string
+                # 		if the current index is NOT a space
+                # 			if the next index is not a space & string_start_index is null
+                # 				set string_start_index to the current index
+                # 				move on to the next index
+                        
+                # 		identify the end of a string
+                # 		if the current index is NOT a space
+                # 			if the next index is a space or NULL
+                # 				if the next index after that one is a space or NULL
+                # 					set string_end_index to the current index
+                # 					move on to the next index 
+
+                # Add the "process" to the kill list
+                # kill_list[format(num_of_adobe_processes-1)] = {'pid':{'name': 'caption', 'location': 'commandline'}}
 
                 
 
