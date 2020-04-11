@@ -41,30 +41,33 @@ def get_the_tasks():
 
                 # Variables for the following if
                 strings_found = 0
+                string_start_index = NULL
 
                 # For the current process, find the 3 sub-strings we want
                 if strings_found < 3:
 
                         # Loop len(process) number of times
                         for i in range(len(process)):
-                            current_index = process[i]
-                            next_index = process[i + 1]
+                            current_index_char = process[i]
+                            current_index = i
+                            next_index_char = process[i + 1]
 
                             # Move through groups of spaces
-                            if current_index == ' ':
-                                if next_index == ' ':
-                                    continue
+                            if current_index_char == ' ':
+                                if next_index_char == ' ':
+                                    continue # start another loop
 
+                            # Indentify the start of a new string
+                            if current_index_char != ' ':
+                                if next_index_char != ' ' & string_start_index == NULL:
+                                    string_start_index = current_index
+                                    continue # start another fresh loop
 
 
 
 
                 # if strings_found < 3
                 # 	loop over the entire string
-                        
-                # 		move through groups of spaces > 2
-                # 		if the current index and the next index is a space
-                # 			move on to the next index
 
                 # 		identify the start of a NEW string
                 # 		if the current index is NOT a space
