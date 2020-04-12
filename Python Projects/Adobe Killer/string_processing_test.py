@@ -1,4 +1,4 @@
-process = "Adobe_XD                                               'C:\ewerwffe\efew\dobe\efwfewfdf324 -args -moreargs'                     426462"
+process = "Adobe_XD                                              'C:\ewerwffe\efew\dobe\efwfewfdf324 -args -moreargs'                     426462"
 
 # Take in a start & end index for a string
 def substring_constructor(substring_start_index, substring_end_index):
@@ -32,7 +32,7 @@ if strings_found < 3:
             strings_found = strings_found + 1
             continue # start a new loop if applicable
 
-        # Move through groups of spaces
+        # Move through groups of spaces & ignore args for files
         if current_index_char == ' ':
             if process[i+1] == ' ':
                 continue # start another loop
@@ -43,6 +43,12 @@ if strings_found < 3:
                 if string_start_index == None:
                     string_start_index = current_index
                     print(f"*Found the start of a string at {current_index} with a character of {current_index_char}")
+
+        # Identify the end of a sub-string
+        if current_index_char == ' ':
+            if process[i+1] != '-': # move past program args that contain a space followed by -
+                print(f"FOUND THE END OF A STRING AT {current_index} with the value of {current_index_char}")
+
         
         print(current_index_char)
 
