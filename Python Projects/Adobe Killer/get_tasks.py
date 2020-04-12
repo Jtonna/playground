@@ -1,4 +1,5 @@
 import subprocess
+from process_strings import processor
 
 # We are using the WMIC command followed by the PROCESS GET x, x, x command to get a list of everything running on the machine
 # http://net-informations.com/q/mis/wmic.html
@@ -29,8 +30,9 @@ def find_processes(process_name):
             
             num_relevant_programs = num_relevant_programs+1
             
-            # Pass the relevant process "strings" to a Queue
+            # Pass the relevant process "strings" to the
+            processor(indv_process)
 
     
-    print("-------------------------------------")
-    print(f"Queried {process_name} || found {num_relevant_programs} relevent programs")
+    print("\n-------------------------------------")
+    print(f"Queried \"{process_name}\" and found {num_relevant_programs} relevent programs")
