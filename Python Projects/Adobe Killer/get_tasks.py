@@ -10,6 +10,9 @@ processes_list = subprocess.Popen(cmd_get_tasks, shell=True, universal_newlines=
 
 def find_processes(process_name):
 
+    # Keep track of relevan programs
+    num_relevant_programs = 0
+
     # Default process name
     if len(process_name) < 1:
         process_name = "Adobe"
@@ -23,9 +26,11 @@ def find_processes(process_name):
             # Filter out this the program name from the results so we cant add it to the kill list
             if "Adobe Killer" in indv_process or "Adobe_Killer" in indv_process:
                 continue
-
             
+            num_relevant_programs = num_relevant_programs+1
+            
+            # Pass the relevant process "strings" to a Queue
 
-            print(indv_process)
     
-    print(f"Queried {process_name}")
+    print("-------------------------------------")
+    print(f"Queried {process_name} || found {num_relevant_programs} relevent programs")
