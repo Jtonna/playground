@@ -1,3 +1,4 @@
+from get_tasks import find_processes
 
 print("Hello, welcome to Adobe Killer by Jacob Tonna")
 print("    This program was written because i cannot stand the number of adobe proccesses that spawn & persist after closing Adobe XD, Photoshop & Illustrator, it drives me nuts.")
@@ -14,3 +15,7 @@ print("    Any annoying ass Adobe Program \n")
 print("Warnings")
 print("    Chances are this script wont work on MAC or Linux as the main command running this system is based on Command Prompt in windows. I literally dont know if it will work on other machines or what it would do.")
 print("    I have no intention of maintaining this once it's working on my system, unless it breaks or something. \n\n\n")
+
+# Take user input to start the process
+p2k = input("Enter a process name to kill: ")
+find_processes(p2k)
