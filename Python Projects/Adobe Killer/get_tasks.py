@@ -32,7 +32,6 @@ def find_processes(process_name):
             
             # Pass the relevant process "strings" to the
             processor(indv_process)
-
     
     print("\n-------------------------------------")
     print(f"Queried \"{process_name}\" and found {num_relevant_programs} relevent programs")

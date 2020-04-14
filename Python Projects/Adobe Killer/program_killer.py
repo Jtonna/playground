@@ -1,4 +1,5 @@
 from get_tasks import find_processes
+from kill_list import kill_processes
 
 print("Hello, welcome to Adobe Killer by Jacob Tonna")
 print("    This program was written because i cannot stand the number of adobe proccesses that spawn & persist after closing Adobe XD, Photoshop & Illustrator, it drives me nuts.")
@@ -19,3 +20,4 @@ print("    I have no intention of maintaining this once it's working on my syste
 # Take user input to start the process
 p2k = input("Enter a process name to kill: ")
 find_processes(p2k)
+kill_processes()
