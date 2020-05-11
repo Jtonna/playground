@@ -11,7 +11,7 @@ public class ValidationError {
     }
 
     public ValidationError(){
-        // since i added a default constructor i have to have this for some reason.
+        // since i added a custom constructor spring needs to have the default constructor with no variables
     }
 
     // auto generated getters and setters
