@@ -60,3 +60,10 @@ The application is simple; there are employees who have values associated with t
 This application has the same concepts as EmployeeAPP, except the employees data is accessible over a REST API. There is also a specific GET endpoint that allows you to pass in a float value to see what the employees salary would look like if you gave them a raise. It also utilizes the 200 response that is (OK)
 
 https://restfulapi.net/
+
+
+
+
+
+## Dogs Exceptions
+
