@@ -67,3 +67,4 @@ https://restfulapi.net/
 
 ## Dogs Exceptions
 
+This application builds on the previous project (Intro to maven spring tomcat) but builds upon it through error handling. We are able to successfully give the user error messages if the server receives the wrong data type through a URI GET Request. If the user accesses an endpoint that doesn't exist or more simply and commonly, requests some data the we don't have, such as information about a specific dog breed that we don't have stored.
