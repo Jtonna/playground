@@ -51,6 +51,7 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
 
+    // handles user trying to access endpoints that dont exist
     @Override
     protected ResponseEntity<Object> handleNoHandlerFoundException(NoHandlerFoundException ex, HttpHeaders headers, HttpStatus status, WebRequest request)
     {
