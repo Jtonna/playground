@@ -21,7 +21,6 @@ import java.util.Date;
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     // this class handles all types of exceptions, not just resource not found.
     // this works on all of our rest controllers. they all look to this file for advice
-    // must extend
 
     @Autowired
     private MessageSource messageSource;
@@ -43,12 +42,12 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     protected ResponseEntity<Object> handleTypeMismatch(TypeMismatchException ex, HttpHeaders headers, HttpStatus status, WebRequest request){
         ErrorDetail errorDetail = new ErrorDetail();
         errorDetail.setTimestamp(new Date().getTime());
-        errorDetail.setStatus(HttpStatus.BAD_REQUEST.value());
-        errorDetail.setTitle(ex.getPropertyName());
+        errorDetail.setStatus(HttpStatus.NOT_ACCEPTABLE.value());
+        errorDetail.setTitle("Type Mismatch");
         errorDetail.setDetail(ex.getMessage());
         errorDetail.setDevMessage(request.getDescription(true));
 
-        return new ResponseEntity<>(errorDetail, null, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(errorDetail, null, HttpStatus.NOT_ACCEPTABLE);
     }
 
 

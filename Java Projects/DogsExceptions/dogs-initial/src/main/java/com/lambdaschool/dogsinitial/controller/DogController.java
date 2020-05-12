@@ -1,6 +1,7 @@
 package com.lambdaschool.dogsinitial.controller;
 
 import com.lambdaschool.dogsinitial.exception.ResourceNotFoundException;
+import com.lambdaschool.dogsinitial.exception.ValidationError;
 import com.lambdaschool.dogsinitial.model.Dog;
 import com.lambdaschool.dogsinitial.DogsinitialApplication;
 import org.springframework.http.HttpStatus;
@@ -39,10 +40,18 @@ public class DogController
 
     // localhost:8080/dogs/breeds/{breed}
     @GetMapping(value = "/breeds/{breed}", produces = {"application/json"})
-    public ResponseEntity<?> getDogBreeds (@PathVariable String breed)
+    public ResponseEntity<?> getDogBreeds(@PathVariable String breed)
     {
-        ArrayList<Dog> rtnDogs = DogsinitialApplication.ourDogList.
-                findDogs(d -> d.getBreed().toUpperCase().equals(breed.toUpperCase()));
+        System.out.println(breed);
+        ArrayList<Dog> rtnDogs;
+
+        // If the arraylist of "dogs" with the breed of {breed} is empty, throw an custom ResourceNotFoundException
+        if(DogsinitialApplication.ourDogList.findDogs(d -> d.getBreed().toUpperCase().equals(breed.toUpperCase())).isEmpty())
+        {
+            throw new ResourceNotFoundException("Sorry, we couldnt find a dog breed with the name of "+ breed +".");
+        } else {
+            rtnDogs = DogsinitialApplication.ourDogList.findDogs(d -> d.getBreed().toUpperCase().equals(breed.toUpperCase()));
+        }
         return new ResponseEntity<>(rtnDogs, HttpStatus.OK);
     }
 

@@ -26,6 +26,11 @@ public class Dog
         this.apartmentSuitable = toClone.isApartmentSuitable();
     }
 
+    public Dog()
+    {
+        // default constructor
+    }
+
     public long getId()
     {
         return id;
