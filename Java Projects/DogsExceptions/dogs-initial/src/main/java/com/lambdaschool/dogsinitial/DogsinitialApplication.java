@@ -28,9 +28,7 @@ public class DogsinitialApplication
         // remember a bean is an java object (json). if this is spelled wrong theres no error checking for this. get it right every time.
         dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
         // when we dont find an endpoint we will handle it not the dispatcher servlet
-
-
-
+        
     }
 
 }
