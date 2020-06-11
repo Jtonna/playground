@@ -10,12 +10,19 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/catalog")
-public class MovieCatalogResource
+public class MovieCatalogController
 {
 
     @RequestMapping("/{movieId}")
     public List<CatalogItem> getCatalog(@PathVariable("movieId") String movieId)
     {
+        // get all rated movie id's
+
+        /// for each movie id, call movie info service and get details
+
+        // put them together to return the info
+
+
         return Collections.singletonList(
                 new CatalogItem(
                         "Pixels",
