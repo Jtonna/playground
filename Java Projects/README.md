@@ -9,3 +9,5 @@ All of the other folders are individual side projects just for testing & learnin
 ## Movie Microservices
 
 This project is from [Java Brains](https://www.youtube.com/watch?v=y8IQb4ofjDo&list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas) on YouTube, where he discusses and shows examples of developing Microservices & having them communicate with each other. In this example we will be using both ways of discovering microservices, Hardcoded addresses & Discovery.
+
+This project is made up of 3 microservices, Movie Info service, Ratings Data and Movie Catalog.
