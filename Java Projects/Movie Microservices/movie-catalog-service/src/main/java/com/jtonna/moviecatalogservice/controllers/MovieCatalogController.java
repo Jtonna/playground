@@ -30,13 +30,14 @@ public class MovieCatalogController
     @RequestMapping("/{userId}")
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId)
     {
-        UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + userId, UserRating.class);
-
+        // Notice how the URL isnt an actual URL, we are using the service name that is registered on the eureka discovery server
+        // We are able to do this because this is an eureka client & because of the @LoadBalanced annotation for the restTemplate bean
+        UserRating ratings = restTemplate.getForObject("http://movie-ratings-service/ratingsdata/users/" + userId, UserRating.class);
 
         return ratings.getUserRating().stream().map(rating -> {
 
         /// for each movie id, call movie info service and get details
-        Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rating.getMovieId(), Movie.class);
+        Movie movie = restTemplate.getForObject("http://movie-info-service/movies/" + rating.getMovieId(), Movie.class);
 
         // put them together to return the info
             return new CatalogItem(movie.getName(),"this movie is about....", rating.getRating());
