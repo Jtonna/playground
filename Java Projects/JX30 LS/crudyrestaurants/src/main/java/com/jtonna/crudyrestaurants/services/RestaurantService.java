@@ -11,5 +11,5 @@ public interface RestaurantService
 
     Restaurant findRestaurantById(long id);
 
-    List<Restaurant> findByNameLike();
+    List<Restaurant> findByNameLike(String thename);
 }
