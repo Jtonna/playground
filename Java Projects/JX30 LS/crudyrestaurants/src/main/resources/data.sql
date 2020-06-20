@@ -12,7 +12,7 @@ INSERT INTO payments (paymentid, type)
            (2, 'Credit Card'),
            (3, 'Mobile Pay');
 
-INSERT INTO restaurants (restaurantid, name, address, city, state, telephone, seatcapacity)
+INSERT INTO restaurants (restaurantid, name, address, city, state, telephone, seatingcapacity)
     VALUES (1, 'Apple', '123 Main Street', 'City', 'ST', '555-555-1234', 15),
            (2, 'Eagle Cafe', '321 Uptown Drive', 'Town', 'ST', '555-555-5555', 24),
            (3, 'Number 1 Eats', '565 Side Avenue', 'Village', 'ST', '555-123-1555', 37);
