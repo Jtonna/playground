@@ -26,7 +26,7 @@ public class Restaurant
     @OneToMany(mappedBy = "restaurant", // mapped by the field listed in restaurant
             cascade = CascadeType.ALL, // changes made to restaurant cascade to the menus (lise a restaurant name changing, or deleting a restaurant
             orphanRemoval = true) // if for some reason a menu is found without a restaurant, we remove it.
-    @JsonIgnoreProperties(value = "restaurants") // ignore the model's table we are in because of infinite loops
+    @JsonIgnoreProperties(value = "restaurant") // ignore the model's name we are in because of infinite loops
     private List<Menu> menus = new ArrayList<>();
 
     @ManyToMany()
