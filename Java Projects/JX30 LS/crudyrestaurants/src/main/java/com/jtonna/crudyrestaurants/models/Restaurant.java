@@ -1,5 +1,8 @@
 package com.jtonna.crudyrestaurants.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +26,14 @@ public class Restaurant
     @OneToMany(mappedBy = "restaurant", // mapped by the field listed in restaurant
             cascade = CascadeType.ALL, // changes made to restaurant cascade to the menus (lise a restaurant name changing, or deleting a restaurant
             orphanRemoval = true) // if for some reason a menu is found without a restaurant, we remove it.
+    @JsonIgnoreProperties(value = "restaurants") // ignore the model's table we are in because of infinite loops
     private List<Menu> menus = new ArrayList<>();
 
     @ManyToMany()
     @JoinTable(name = "restaurantpayments", // name of the table
             joinColumns = @JoinColumn(name = "restaurantid"), // One part of the Join Table
             inverseJoinColumns = @JoinColumn(name = "paymentid")) // The other part of the Join Table
+    @JsonIgnoreProperties(value = "restaurants") // ignore the model's table we are in because of infinite loops
     private List<Payment> payments = new ArrayList<>();
 
     public Restaurant()

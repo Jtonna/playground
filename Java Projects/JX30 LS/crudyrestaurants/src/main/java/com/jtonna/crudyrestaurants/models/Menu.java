@@ -1,5 +1,7 @@
 package com.jtonna.crudyrestaurants.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 @Entity // Defines this as a Table (but in relational algebra we call them entity)
@@ -22,6 +24,7 @@ public class Menu
     // So basically this menu can only go to one Restaurant, but a Restaurant can have many menu items's
     @ManyToOne // Defines the relationship
     @JoinColumn( name = "restaurantid", nullable = false) // How we join the two in a join table
+    @JsonIgnoreProperties(value = "menus") // ignore the model's table name we are in because of infinite loops
     private Restaurant restaurant;
 
     public Menu()
