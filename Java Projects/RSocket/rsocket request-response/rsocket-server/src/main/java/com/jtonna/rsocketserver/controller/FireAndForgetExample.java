@@ -15,7 +15,7 @@ public class FireAndForgetExample
     @MessageMapping("fire-and-forget")
     public void fireAndForget(RSocketMessage rSocketMessage)
     {
-        System.out.println("fire-and-forget received your RSocketMessage: " + rSocketMessage);
+        System.out.println("\nfire-and-forget received your RSocketMessage: " + rSocketMessage);
     }
 
 }
