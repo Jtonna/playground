@@ -1,13 +1,13 @@
-package com.jtonna.rsocketproject;
+package com.jtonna.rsocketserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RsocketProjectApplication {
+public class RsocketServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RsocketProjectApplication.class, args);
+        SpringApplication.run(RsocketServerApplication.class, args);
     }
 
 }
