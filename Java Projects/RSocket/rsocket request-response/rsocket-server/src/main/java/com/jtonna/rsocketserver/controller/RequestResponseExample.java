@@ -16,7 +16,7 @@ public class RequestResponseExample
     @MessageMapping("request-response")
     RSocketMessage requestResponseExample(RSocketMessage rSocketMessage)
     {
-        System.out.println("request-response received your RSocketMessage: " + rSocketMessage);
+        System.out.println("\nrequest-response received your RSocketMessage: " + rSocketMessage);
 
         return new RSocketMessage("THE FUCKING CONTROLLER", "WHATEVER I WANT");
     }
