@@ -1,4 +1,4 @@
-# Getting Started With RSocket
+# rsocket-project
 
 This simple project is from a spring.io tutorial written by Ben Wilcock on March 20, 2019. This project aims to introduce users to the request-response feature of rSocket. In order to communicate with the rSocket Server we are using RSC by Toshaki Maki.
 
