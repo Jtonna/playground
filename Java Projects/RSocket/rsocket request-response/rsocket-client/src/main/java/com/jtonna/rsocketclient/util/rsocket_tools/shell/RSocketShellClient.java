@@ -14,6 +14,7 @@ public class RSocketShellClient
 
     private static final String CLIENT = "Client";
     private static final String REQUEST = "Request";
+    private static final String FIRE_AND_FORGET = "fire-and-forget";
     // Add a global class variable for the RSocketRequester
     private final RSocketRequester rsocketRequester;
 
@@ -37,5 +38,17 @@ public class RSocketShellClient
                 .block();
 
         System.out.println("Response was: " + rSocketMessage + " " + LocalDateTime.now().toString() + "\n");
+    }
+
+    @ShellMethod("Send one request. No response will be returned.")
+    public void fireAndForget() throws InterruptedException
+    {
+        System.out.println("\nfire-and-forget. Received request, expect no response.\n");
+
+        this.rsocketRequester
+                .route("fire-and-forget")
+                .data(new RSocketMessage(CLIENT, FIRE_AND_FORGET))
+                .send()
+                .block();
     }
 }
