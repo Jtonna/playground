@@ -1,8 +1,8 @@
 # RSocket Server
 
-This simple project is from a spring.io tutorial written by Ben Wilcock on March 20, 2020. This project aims to introduce users to the request-response, fire-and-forget feature's of RSocket
+This simple project is from a spring.io tutorial written by Ben Wilcock on March 20, 2020. This project aims to introduce users to the request-response, fire-and-forget, streaming feature's of RSocket
 
-One way of communicating with the RSocket Serveris using the RSocket CLI (RSC); A tool developed by Toshaki Maki. Alternatively we should & typically would write our own Shell Program to communicate with the server.
+One way of communicating with the RSocket Server's using the RSocket CLI (RSC); A tool developed by Toshaki Maki. Alternatively we should & typically would write our own Shell Program to communicate with the server.
 
 
 
