@@ -1,6 +1,6 @@
-package com.jtonna.rsocketproject.controller;
+package com.jtonna.rsocketserver.controller;
 
-import com.jtonna.rsocketproject.models.RSocketMessage;
+import com.jtonna.rsocketserver.models.RSocketMessage;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 

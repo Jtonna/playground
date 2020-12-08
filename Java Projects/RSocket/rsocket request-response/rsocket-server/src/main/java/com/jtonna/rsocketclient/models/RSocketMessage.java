@@ -1,4 +1,4 @@
-package com.jtonna.rsocketproject.models;
+package com.jtonna.rsocketclient.models;
 
 import java.time.Instant;
 

@@ -1,6 +1,6 @@
-# Getting Started With RSocket
+# rsocket-project
 
-This simple project is from a spring.io tutorial written by Ben Wilcock on March 20, 2019. This project aims to introduce users to the request-response feature of rSocket. In order to communicate with the rSocket Server we are using RSC by Toshaki Maki.
+This simple project is from a spring.io tutorial written by Ben Wilcock on March 20, 2020. This project aims to introduce users to the request-response feature of rSocket. In order to communicate with the rSocket Server we are using RSC by Toshaki Maki.
 
 Some issues working with the RSC were that the stringified JSON Objects that we were sending, were being received on the server-side as invalid (missing quotations). In my limited testing it seems to be an issue with RSC directly. The workaround I found was adding three \\" in order for a single double quote to be received by the server
 

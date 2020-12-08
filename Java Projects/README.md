@@ -17,6 +17,10 @@ The project has a discovery server, and 3 micro-servers with the movie-catalog-s
 
 The project was based on JavaBrains Spring Boot Microservices Level 1 tutorial series.
 
+## RSocket
+
+This folder includes various project related to RSocket, custom RSocket CLI's and just exploring how RSocket works.
+
 ## Spring Boot Fundamentals
 
 This dir contails work related to the pluralsight course by Kesha Williams titles Spring Boot Fundamentals.
