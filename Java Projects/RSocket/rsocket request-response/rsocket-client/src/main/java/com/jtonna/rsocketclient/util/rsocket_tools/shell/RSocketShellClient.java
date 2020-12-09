@@ -1,17 +1,13 @@
 package com.jtonna.rsocketclient.util.rsocket_tools.shell;
 
 import com.jtonna.rsocketclient.models.RSocketMessage;
-import io.rsocket.SocketAcceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.rsocket.RSocketRequester;
-import org.springframework.messaging.rsocket.RSocketStrategies;
-import org.springframework.messaging.rsocket.annotation.support.RSocketMessageHandler;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import reactor.core.Disposable;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @ShellComponent // Tells spring we are developing a shell based component
 public class RSocketShellClient
@@ -28,32 +24,12 @@ public class RSocketShellClient
     // Add a global class variable for the RSocketRequester.
     private final RSocketRequester rsocketRequester;
 
-    // Use an Autowired constructor to customize the RSocketRequester
+    // Use an Autowired constructor to customize the RSocketRequester and store a reference to it in the global variable
     @Autowired
-    public RSocketShellClient(RSocketRequester.Builder rsocketRequesterBuilder, RSocketStrategies strategies) {
-
-        // (1) Create a UniqueID to keep track of "clients" that subscribe to us (as if we were the server)
-        String client = UUID.randomUUID().toString();
-        System.out.println("Connecting using client ID: {}"+ client);
-
-        // (2) Creates a Socket Acceptor (defined how to process a request)
-        SocketAcceptor responder = RSocketMessageHandler.responder(strategies, new ClientHandler());
-
-        // (3) Register the Socket Acceptor & Connect to the RSocket Server
+    public RSocketShellClient(RSocketRequester.Builder rsocketRequesterBuilder) {
         this.rsocketRequester = rsocketRequesterBuilder
-                .setupRoute("shell-client")
-                .setupData(client)
-                .rsocketStrategies(strategies)
-                .rsocketConnector(connector -> connector.acceptor(responder))
                 .connectTcp("localhost", 7000)
                 .block();
-
-        // (4) Handle Disconnection properly.
-        this.rsocketRequester.rsocket()
-                .onClose()
-                .doOnError(error -> System.out.println("Connection CLOSED"))
-                .doFinally(consumer -> System.out.println("Client DISCONNECTED"))
-                .subscribe();
     }
 
     @ShellMethod("Send one request. One response will be printed")
@@ -102,5 +78,4 @@ public class RSocketShellClient
             disposable.dispose();
         }
     }
-
 }
