@@ -19,7 +19,7 @@ public class RSocketShellClient
 
     private static final String CLIENT = "Client";
     private static final String REQUEST = "Request";
-    private static final String FIRE_AND_FORGET = "fire-and-forget";
+    private static final String FIRE_AND_FORGET = "Fire-and-forget";
     private static final String STREAM = "Stream";
 
     // Add a global class for Disposable.
@@ -56,7 +56,6 @@ public class RSocketShellClient
                     .subscribe();
         }
 
-
     @ShellMethod("Send one request. One response will be printed")
     public void requestResponse() throws InterruptedException
     {
@@ -83,7 +82,7 @@ public class RSocketShellClient
                 .block();
     }
 
-    @ShellMethod("Send one request. ,amy responses (stream) will be received.")
+    @ShellMethod("Send one request. many responses (stream) will be received.")
     public void stream()
     {
         System.out.println("\nstream. Sending one request, Waiting for unknown amount of responses. (Stop process to quit, or write response-limiting logic on client or server)");
