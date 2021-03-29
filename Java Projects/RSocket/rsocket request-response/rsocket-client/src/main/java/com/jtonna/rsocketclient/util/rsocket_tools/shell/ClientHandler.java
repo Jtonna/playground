@@ -13,9 +13,11 @@ public class ClientHandler
     {
         System.out.println("Connection " + status);
 
-        return Flux.interval(Duration.ofSeconds(5)).map(
-                index -> String.valueOf(Runtime.getRuntime().freeMemory())
-        );
+        return Flux
+                .interval(Duration.ofSeconds(5))
+                .map(index -> {
+                    return String.valueOf(Runtime.getRuntime().freeMemory());
+                });
     }
 
 
