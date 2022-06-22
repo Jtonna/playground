@@ -1,8 +1,7 @@
 # Welcome to my "Playground"
-This repo contains various projects of various languages. Its primarily used to test out ideas, get familiar with some trickery syntax & or design patterns/algorithm's.
+This repo contains various projects of various languages. Its primarily used to test out ideas, get familiar with some trickier syntax & or design patterns/algorithm's.
 
-Please see individual files based on language name, framework or library name below to see what projects exist there.
-
+The projects in here are sorted by language first, then project name.
 
 
 ## License
